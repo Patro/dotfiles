@@ -1,0 +1,7 @@
+# Safe delete
+alias rm="trash"
+
+# Config Files
+alias vimrc="vim ~/.vimrc"
+alias vimplugins="vim ~/.dotfiles/vim/vim.symlink/plugin/plugins.vim"
+alias zshrc="vim ~/.zshrc"

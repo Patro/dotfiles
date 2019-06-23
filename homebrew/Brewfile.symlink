@@ -1,0 +1,6 @@
+brew 'ack'
+brew 'git'
+brew 'rbenv'
+brew 'ruby-build'
+brew 'tmux'
+brew 'reattach-to-user-namespace'

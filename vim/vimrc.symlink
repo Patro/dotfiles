@@ -1,0 +1,432 @@
+" ----------------------------------------------------------------------------
+" Vim settings for @Patro
+" ----------------------------------------------------------------------------
+
+"install plugins
+source ~/.vim/plugin/plugins.vim
+
+"set encoding
+if has('vim_starting') | set encoding=utf-8 nobomb | endif
+scriptencoding utf-8
+
+"make vim more useful
+set nocompatible
+
+"enable syntax highlighting
+syntax on
+
+"enable file type detection, file type specific plugins and indenting
+filetype plugin indent on
+
+"reduce the redraw frequency
+set lazyredraw
+
+"remove timeout when hitting escape
+set timeoutlen=1000 ttimeoutlen=0
+
+"enable per-directory .vimrc files and disable unsafe commands in them
+set exrc
+set secure
+
+"disable welcome screen
+set shortmess+=I
+
+" ----------------------------------------------------------------------------
+" Display
+" ----------------------------------------------------------------------------
+
+set background=dark
+:colorscheme solarized
+highlight ColorColumn ctermbg=darkgray
+
+"wintitle = filename - vim
+set title
+
+"this is already set by modern terminal
+set ttyfast
+
+"no beeps or flashes
+set visualbell t_vb=
+"turn off audible bells
+set noerrorbells
+
+"enable line numbers
+set number
+set numberwidth=5
+
+"show context around current cursor position
+set scrolloff=5
+set sidescrolloff=10
+
+set textwidth=78
+
+"the line will be right after column 80, &tw+3
+set colorcolumn=120
+
+"highlight current line
+set cursorline
+
+"don't syntax highlight long lines
+set synmaxcol=512
+
+"show the cursor position
+set ruler
+
+" ------------------------------------
+" Tab line
+" ------------------------------------
+
+"start OFF, toggle =2 to show tabline
+set showtabline=0
+
+" ------------------------------------
+" Status line
+" ------------------------------------
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+"always show status line
+set laststatus=2
+
+" ------------------------------------
+" Command line
+" ------------------------------------
+
+"show incomplete commands
+set showcmd
+"don't show -- INSERT -- in cmdline
+set noshowmode
+
+" ----------------------------------------------------------------------------
+" Input
+" ----------------------------------------------------------------------------
+
+" ------------------------------------
+" Mouse
+" ------------------------------------
+
+"enable mouse in all modes
+set mouse=a
+
+if !has('nvim') | set ttymouse=xterm | endif
+
+" ----------------------------------------------------------------------------
+" Wild and file globbing stuff in command mode
+" ----------------------------------------------------------------------------
+
+"browse files in same dir as open file
+set browsedir=buffer
+"enhanced command line completion.
+set wildmenu
+"complete files using a menu AND list
+set wildmode=list:longest,full
+
+set wildignorecase
+
+set wildignore+=.git,.hg,.svn
+set wildignore+=*/vendor/bundle/*,*/vendor/gems/*,*/vendor/cache/*,*/.bundle/*,*/.sass-cache/*,*.gem
+set wildignore+=*.aux,*.out,*.toc
+set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest,*.rbc,*.class
+set wildignore+=*.ai,*.bmp,*.gif,*.ico,*.jpg,*.jpeg,*.png,*.psd,*.webp
+set wildignore+=*.avi,*.m4a,*.mp3,*.oga,*.ogg,*.wav,*.webm
+set wildignore+=*.eot,*.otf,*.ttf,*.woff
+set wildignore+=*.doc,*.pdf
+set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
+set wildignore+=*.swp,.lock,.DS_Store,._*
+set wildignore+=*/node_modules/
+
+" ----------------------------------------------------------------------------
+" File saving
+" ----------------------------------------------------------------------------
+
+"reload files if they were edited elsewhere
+set autoread
+set fileformats=unix,mac,dos
+set fileformat=unix
+
+" From https://github.com/swizzard/dotfiles/blob/master/.vimrc
+" Don't keep .viminfo information for files in temporary directories or shared
+" memory filesystems; this is because they're used as scratch spaces for tools
+" like sudoedit(8) and pass(1) and hence could present a security problem
+if !has('nvim') && has('viminfo')
+  augroup dkoviminfo
+    autocmd!
+    silent! autocmd vimrc BufNewFile,BufReadPre
+        \ /tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*,*/shm/*
+        \ setlocal viminfo=
+  augroup END
+endif
+
+"disable swap
+set noswapfile
+
+"backups
+set backupskip=/tmp/*
+
+"undo files
+set undodir=~/.vim/undo/
+set undofile
+set undolevels=1000
+set undoreload=10000
+
+" ----------------------------------------------------------------------------
+" Completion -- see also plugins/completion.vim
+" ----------------------------------------------------------------------------
+
+"don't complete includes
+set complete-=i
+"don't complete tags
+set complete-=t
+"don't open scratch preview
+set completeopt-=preview
+"show PUM, even for one thing
+set completeopt+=menu,menuone
+
+"@see <https://github.com/Valloric/YouCompleteMe/blob/master/autoload/youcompleteme.vim#L343>
+if has('patch-7.4.314')
+  "disable "Pattern not found" messages
+  set shortmess+=c
+endif
+
+" ----------------------------------------------------------------------------
+" Window splitting and buffers
+" ----------------------------------------------------------------------------
+
+set splitbelow
+set splitright
+"vertical sep between windows (unicode)
+set fillchars=vert:│
+
+set hidden
+
+"reveal already opened files from the quickfix window instead of opening new buffers
+set switchbuf=useopen
+
+"don't reset cursor to start of line when moving around
+set nostartofline
+
+" ----------------------------------------------------------------------------
+" Code folding
+" ----------------------------------------------------------------------------
+
+set nofoldenable
+set foldcolumn=2
+"show all folds by default
+set foldlevel=99
+"show all folds by default
+set foldlevelstart=99
+
+" ----------------------------------------------------------------------------
+" Trailing whitespace
+" ----------------------------------------------------------------------------
+
+set list
+set listchars=
+set listchars+=tab:→\
+set listchars+=trail:·
+"show cut off when nowrap
+set listchars+=extends:→
+set listchars+=precedes:←
+set listchars+=nbsp:⣿
+
+" ----------------------------------------------------------------------------
+" Diffing
+" ----------------------------------------------------------------------------
+
+set fillchars+=diff:⣿
+"use in vertical diff mode
+set diffopt=vertical
+"blank lines to keep sides aligned
+set diffopt+=filler
+"ignore whitespace changes
+set diffopt+=iwhite
+
+" ----------------------------------------------------------------------------
+" Input auto-formatting (global defaults)
+" Probably need to update these in after/ftplugin too since ftplugins will
+" probably update it.
+" ----------------------------------------------------------------------------
+
+set formatoptions=
+"auto-wrap comments using textwidth
+set formatoptions+=c
+"continue comments by default
+set formatoptions+=r
+"do not continue comment using o or O
+set formatoptions-=o
+"continue comments with gq
+set formatoptions+=q
+"auto-gq on type in comments?
+set formatoptions-=a
+"recognize numbered lists
+set formatoptions+=n
+"use indent from 2nd line of a paragraph
+set formatoptions+=2
+"break lines that are already long?
+set formatoptions-=l
+"break before 1-letter words
+set formatoptions+=1
+"no // comment when joining commented lines
+set formatoptions+=j
+
+"never use octal when <C-x> or <C-a>
+set nrformats-=octal
+
+" ----------------------------------------------------------------------------
+" Whitespace
+" ----------------------------------------------------------------------------
+
+"don't wrap long lines
+set nowrap
+"J command doesn't add extra space
+set nojoinspaces
+
+" ----------------------------------------------------------------------------
+" Indenting - overridden by indent plugins
+" ----------------------------------------------------------------------------
+
+"indent when creating newline
+set autoindent
+
+"for autoindent, use same spaces/tabs mix as previous line, even if
+"tabs/spaces are mixed. Helps for docblock, where the block comments have a
+"space after the indent to align asterisks
+set copyindent
+
+"try not to change the indent structure on "<<" and ">>" commands. I.e. keep
+"block comments aligned with space if there is a space there.
+set nopreserveindent
+
+"smart detect when in braces and parens. Has annoying side effect that it
+"won't indent lines beginning with '#'. Relying on syntax indentexpr instead.
+set nosmartindent
+
+"only needed for C-style code
+set nocindent
+
+" ----------------------------------------------------------------------------
+" Tabbing - overridden by editorconfig, after/ftplugin
+" ----------------------------------------------------------------------------
+
+"default to spaces instead of tabs
+set expandtab
+"softtabs are 2 spaces for expandtab
+set shiftwidth=2
+"negative = use same as shiftwidth
+set softtabstop=-1
+
+"make tabs as wide as two spaces
+set tabstop=2
+
+"use multiple of shiftwidth when shifting indent levels.
+"this is OFF so block comments don't get fudged when using ">>" and "<<"
+set noshiftround
+
+"when on, a <Tab> in front of a line inserts blanks according to
+"'shiftwidth'. 'tabstop' or 'softtabstop' is used in other places.
+set smarttab
+
+"bs can remove indentations, eol markers and text. http://vi.stackexchange.com/a/2163
+set backspace=indent,eol,start
+
+" ----------------------------------------------------------------------------
+" Match and search
+" ----------------------------------------------------------------------------
+
+"tenths of a sec
+set matchtime=1
+"briefly jump to matching parens
+set showmatch
+"highlight matches
+set hlsearch
+"highlight dynamically as pattern is typed
+set incsearch
+"searches wrap around end of the file.
+set wrapscan
+"ignore case when searching
+set ignorecase
+
+set smartcase
+
+"use Silver Searcher
+if executable('ag') "fuzzy finder
+  set grepprg=ag\ --nogroup\ --nocolor
+endif
+
+" ----------------------------------------------------------------------------
+" Special highlights
+" ----------------------------------------------------------------------------
+
+"misspellings
+match ErrorMsg 'targett'
+match ErrorMsg 'plugn'
+
+"highlight VCS conflict markers
+"@see {@link https://bitbucket.org/sjl/dotfiles/src/83aac563abc9d0116894ac61db2c63c9a05f72be/vim/vimrc?at=default&fileviewer=file-view-default#vimrc-233}
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+
+" ----------------------------------------------------------------------------
+" Other settings
+" ----------------------------------------------------------------------------
+
+"set leader to space
+let mapleader = "\<Space>"
+"writes buffer if modified
+map <Leader>w :update<CR>
+"exit vim
+map <Leader>q :quitall<CR>
+"show git status
+map <Leader>gs :Gstatus<CR>
+"paste from os clipboard
+map <Leader>p "*p
+"yank to os clipboard
+map <Leader>y "*y
+"fuzzy file finder
+noremap <C-p> :Files<CR>
+
+"don't deselect visual block after indent/unindent
+vnoremap < <gv
+vnoremap > >gv
+
+"shortcut for <CTRL> + hjkl to traverse panes
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+"configure NERDTree
+let NERDTreeShowHidden=1
+nmap <C-n> :NERDTreeToggle<CR>
+nmap <C-f> :NERDTreeFind<CR>
+
+"allows syntax highlighting support for JSX in regular javascript files
+let g:jsx_ext_required = 0
+
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+"start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+"start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+"remove trailing whitespaces
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+
+autocmd FileType c,cpp,javascript,ruby autocmd BufWritePre <buffer> :call TrimWhitespace()
+

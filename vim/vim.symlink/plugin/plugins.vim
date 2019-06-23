@@ -1,0 +1,37 @@
+call plug#begin('~/.vim/plugged')
+
+Plug 'Lokaltog/vim-easymotion'
+Plug 'junegunn/vim-easy-align'
+Plug 'airblade/vim-gitgutter'
+Plug 'scrooloose/syntastic'
+Plug 'itchyny/lightline.vim' "statusline
+Plug 'tpope/vim-fugitive'
+
+"tmux
+Plug 'benmills/vimux'
+Plug 'christoomey/vim-tmux-navigator'
+
+"file sytem navigation
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-eunuch'
+
+"fuzzy file finder
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+
+"syntax highlighting
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-rails'
+Plug 'elzr/vim-json'
+Plug 'tpope/vim-markdown'
+Plug 'groenewege/vim-less'
+Plug 'tpope/vim-haml'
+Plug 'rust-lang/rust.vim'
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'mxw/vim-jsx', { 'for': 'javascript' }
+
+"markdown support
+Plug 'junegunn/goyo.vim'
+
+call plug#end()
