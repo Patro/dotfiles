@@ -34,4 +34,7 @@ Plug 'mxw/vim-jsx', { 'for': 'javascript' }
 "markdown support
 Plug 'junegunn/goyo.vim'
 
+"pattern search in source files
+Plug 'mileszs/ack.vim'
+
 call plug#end()

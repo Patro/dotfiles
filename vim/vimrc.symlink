@@ -353,6 +353,7 @@ set smartcase
 "use Silver Searcher
 if executable('ag') "fuzzy finder
   set grepprg=ag\ --nogroup\ --nocolor
+  let g:ackprg = 'ag --vimgrep'
 endif
 
 " ----------------------------------------------------------------------------
