@@ -37,4 +37,7 @@ Plug 'junegunn/goyo.vim'
 "pattern search in source files
 Plug 'mileszs/ack.vim'
 
+"rubocop
+Plug 'ngmy/vim-rubocop'
+
 call plug#end()
