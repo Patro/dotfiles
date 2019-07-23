@@ -40,4 +40,8 @@ Plug 'mileszs/ack.vim'
 "rubocop
 Plug 'ngmy/vim-rubocop'
 
+"easy note taking in vim
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-notes'
+
 call plug#end()
