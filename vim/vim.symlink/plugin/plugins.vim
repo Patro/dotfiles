@@ -1,9 +1,11 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'Lokaltog/vim-easymotion'
-Plug 'junegunn/vim-easy-align'
 Plug 'airblade/vim-gitgutter'
+Plug 'dense-analysis/ale'
 Plug 'itchyny/lightline.vim' "statusline
+Plug 'junegunn/vim-easy-align'
+Plug 'maximbaz/lightline-ale'
 Plug 'tpope/vim-fugitive'
 
 "tmux
