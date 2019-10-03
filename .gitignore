@@ -1,7 +1,8 @@
+!.gitkeep
 !bin
-vim/bundle/
 .DS_Store
 git/gitconfig.symlink
 ruby/bundle.symlink/cache/
+vim/bundle/
 vim/vim.symlink/plugged
 vim/vim.symlink/undo
