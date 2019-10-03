@@ -3,7 +3,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'Lokaltog/vim-easymotion'
 Plug 'junegunn/vim-easy-align'
 Plug 'airblade/vim-gitgutter'
-Plug 'scrooloose/syntastic'
 Plug 'itchyny/lightline.vim' "statusline
 Plug 'tpope/vim-fugitive'
 
