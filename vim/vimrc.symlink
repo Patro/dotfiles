@@ -60,7 +60,7 @@ set sidescrolloff=10
 
 set textwidth=78
 
-"the line will be right after column 80, &tw+3
+"the line will be on column 120
 set colorcolumn=120
 
 "highlight current line
