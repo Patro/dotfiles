@@ -139,6 +139,8 @@ set wildignore+=*/node_modules/
 
 "reload files if they were edited elsewhere
 set autoread
+
+"end of line
 set fileformats=unix,mac,dos
 set fileformat=unix
 
