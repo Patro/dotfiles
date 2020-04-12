@@ -29,6 +29,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'mxw/vim-jsx', { 'for': 'javascript' }
 Plug 'elixir-editors/vim-elixir'
+Plug 'aklt/plantuml-syntax'
 
 "pattern search in source files
 Plug 'mileszs/ack.vim'

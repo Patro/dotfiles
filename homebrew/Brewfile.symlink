@@ -1,6 +1,7 @@
 brew 'ack'
 brew 'git'
+brew 'plantuml'
 brew 'rbenv'
+brew 'reattach-to-user-namespace'
 brew 'ruby-build'
 brew 'tmux'
-brew 'reattach-to-user-namespace'
