@@ -1,6 +1,8 @@
 *.DS_Store
 .bundle
 .env
+Gemfile.local
+Gemfile.local.lock
 db/*.sqlite3
 log/*.log
 tmp/**/*
