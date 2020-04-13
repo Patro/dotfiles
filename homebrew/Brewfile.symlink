@@ -1,4 +1,5 @@
 brew 'ack'
+brew 'bat'
 brew 'exa'
 brew 'git'
 brew 'plantuml'
