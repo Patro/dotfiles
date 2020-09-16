@@ -31,6 +31,8 @@ Plug 'mxw/vim-jsx', { 'for': 'javascript' }
 Plug 'elixir-editors/vim-elixir'
 Plug 'aklt/plantuml-syntax'
 
+Plug 'vim-latex/vim-latex'
+
 "pattern search in source files
 Plug 'mileszs/ack.vim'
 

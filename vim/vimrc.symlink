@@ -441,6 +441,18 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 "*******************************************************************************
+"LaTeX
+"*******************************************************************************
+
+let g:Tex_UseMakefile=1
+let g:Tex_Folding=0
+let g:Tex_ViewRuleComplete_pdf = 'open build/$*.pdf'
+let g:tex_flavor='latex'
+let g:Tex_GotoError=0
+imap <C-J> <Plug>IMAP_JumpForward
+map <Leader>j <Plug>IMAP_JumpForward
+
+"*******************************************************************************
 "Other settings
 "*******************************************************************************
 
