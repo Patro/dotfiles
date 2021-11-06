@@ -473,6 +473,8 @@ endfun
 
 autocmd FileType c,cpp,javascript,ruby autocmd BufWritePre <buffer> :call TrimWhitespace()
 
+com! FormatXML :%!xmllint --format -
+
 if filereadable("./.project.vim")
   source ./.project.vim
 endif
