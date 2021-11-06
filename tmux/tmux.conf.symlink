@@ -48,6 +48,12 @@ set-option -g status-keys vi
 set-window-option -g mode-keys vi
 bind-key -T copy-mode-vi 'v' send -X begin-selection
 
+# Pane resizing
+bind-key -r -N 'resize pane to the left'  H resize-pane -L 5
+bind-key -r -N 'resize pane downwards'    J resize-pane -D 5
+bind-key -r -N 'resize pane upwards'      K resize-pane -U 5
+bind-key -r -N 'resize pane to the right' L resize-pane -R 5
+
 # Smart pane switching with awareness of Vim splits.
 # See: https://github.com/christoomey/vim-tmux-navigator
 send_raw_keys="ps -o state= -o comm= -t '#{pane_tty}' \
