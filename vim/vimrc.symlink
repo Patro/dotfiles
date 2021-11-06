@@ -461,6 +461,9 @@ map <Leader>j <Plug>IMAP_JumpForward
 "allows syntax highlighting support for JSX in regular javascript files
 let g:jsx_ext_required = 0
 
+"show double quotes in JSON files
+let g:vim_json_syntax_conceal = 0
+
 "remove trailing whitespaces
 fun! TrimWhitespace()
     let l:save = winsaveview()
