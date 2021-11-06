@@ -4,6 +4,12 @@ set-option -g status-position top
 # Remove escape delay between prefix and command
 set-option -sg escape-time 1
 
+# Set base index for windows to 1 instead of 0
+set-option -g base-index 1
+
+# Set base index for panes to 1 instead of 0
+set-window-option -g pane-base-index 1
+
 # Set clock hour format
 set-option -g clock-mode-style 24
 
