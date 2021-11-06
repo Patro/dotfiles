@@ -2,6 +2,8 @@
 .bundle
 .env
 .project.vim
+.solargraph.yml
+solargraph_rails.rb
 Gemfile.local
 Gemfile.local.lock
 db/*.sqlite3
