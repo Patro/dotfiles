@@ -22,7 +22,7 @@ set synmaxcol=512
 filetype plugin indent on
 
 "reduce the redraw frequency
-set lazyredraw
+"set lazyredraw
 
 "remove timeout when hitting escape
 set timeoutlen=1000 ttimeoutlen=0
