@@ -1,6 +1,7 @@
 *.DS_Store
 .bundle
 .env
+.project.vim
 Gemfile.local
 Gemfile.local.lock
 db/*.sqlite3
