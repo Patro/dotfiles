@@ -472,3 +472,7 @@ fun! TrimWhitespace()
 endfun
 
 autocmd FileType c,cpp,javascript,ruby autocmd BufWritePre <buffer> :call TrimWhitespace()
+
+if filereadable("./.project.vim")
+  source ./.project.vim
+endif
