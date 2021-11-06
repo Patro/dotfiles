@@ -16,7 +16,7 @@ set nocompatible
 syntax on
 
 "don't syntax highlight long lines
-set synmaxcol=512
+"set synmaxcol=512
 
 "enable file type detection, file type specific plugins and indenting
 filetype plugin indent on
