@@ -40,7 +40,8 @@ set-option -g display-panes-time 1200
 
 # Configure status bar
 set-option -g status-left-length 40
-set-option -g status-left '[#S]'
+set-option -g status-left '[#S/#W/#P]'
+set-option -g status-justify centre
 set-option -g status-right "%d.%m.%Y %H:%M "
 
 # Act like vim in copy mode
