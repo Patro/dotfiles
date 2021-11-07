@@ -40,7 +40,6 @@ set shortmess+=I
 
 set background=dark
 :colorscheme solarized
-highlight ColorColumn ctermbg=darkgray
 
 "wintitle = filename - vim
 set title
@@ -87,7 +86,7 @@ set laststatus=2
 "*******************************************************************************
 "Lightline
 "*******************************************************************************
-let g:lightline = {}
+let g:lightline = { 'colorscheme': 'powerline' }
 
 let g:lightline.component_expand = {
 \   'linter_checking': 'lightline#ale#checking',

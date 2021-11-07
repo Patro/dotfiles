@@ -40,9 +40,12 @@ set-option -g display-panes-time 1200
 
 # Configure status bar
 set-option -g status-left-length 40
-set-option -g status-left '[#S/#W/#P]'
+set-option -g status-left ' [#S/#W/#P] '
 set-option -g status-justify centre
-set-option -g status-right "%d.%m.%Y %H:%M "
+set-option -g status-right " %d.%m.%Y %H:%M "
+set-option -g window-status-format " #I:#W#F "
+set-option -g window-status-current-format " #I:#W#F "
+set-option -g window-status-separator ""
 
 # Act like vim in copy mode
 set-option -g status-keys vi
@@ -75,27 +78,38 @@ bind C-k swap-pane -U
 # Reload tmux.conf with prefix-r
 bind C-r source-file ~/.tmux.conf \; display "Reloaded ~/.tmux.conf"
 
-#### COLOUR (Solarized dark)
+#### COLOUR
 
 # default statusbar colors
-set-option -g status-style fg=yellow,bg=black
+set-option -g status-style fg=color245,bg=color236
+
+# left/right statusbar section colors
+set-option -g status-left-style fg=color240,bg=color235
+set-option -g status-right-style fg=color240,bg=color235
 
 # default window title colors
-set-window-option -g window-status-style fg=brightblue,bg=default
+set-window-option -g window-status-style fg=color245,bg=color236
+
+# current window title colors
+set-window-option -g window-status-current-style fg=color231,bg=color240
 
 # active window title colors
-set-window-option -g window-status-current-style fg=brightred,bg=default
+set-window-option -g window-status-activity-style fg=color231,bg=color31
+
+# mode color
+set-window-option -g mode-style fg=color231,bg=color31
 
 # pane border
 set-option -g pane-border-style fg=black
 set-option -g pane-active-border-style fg=brightgreen
 
 # message text
-set-option -g message-style fg=brightred,bg=black
+set-option -g message-style fg=color231,bg=color31
+set-option -g message-command-style fg=color231,bg=color31
 
 # pane number display
-set-option -g display-panes-active-colour blue
-set-option -g display-panes-colour brightred
+set-option -g display-panes-active-colour color33
+set-option -g display-panes-colour color166
 
 # clock
 set-window-option -g clock-mode-colour green
