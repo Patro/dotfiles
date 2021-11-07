@@ -20,7 +20,6 @@ Plug 'junegunn/fzf.vim'
 "syntax highlighting
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-rails'
 Plug 'elzr/vim-json'
 Plug 'tpope/vim-markdown'
 Plug 'groenewege/vim-less'
@@ -32,6 +31,11 @@ Plug 'elixir-editors/vim-elixir'
 Plug 'aklt/plantuml-syntax'
 
 Plug 'vim-latex/vim-latex'
+
+"rails
+Plug 'tpope/vim-rails'
+Plug 'thoughtbot/vim-rspec'
+Plug 'jgdavey/tslime.vim'
 
 "pattern search in source files
 Plug 'mileszs/ack.vim'
