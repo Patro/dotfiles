@@ -1,5 +1,6 @@
 *.DS_Store
 .bundle
+.envrc
 .env
 .project.vim
 .solargraph.yml
