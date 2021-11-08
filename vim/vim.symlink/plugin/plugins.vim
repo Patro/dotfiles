@@ -36,6 +36,7 @@ Plug 'vim-latex/vim-latex'
 Plug 'tpope/vim-rails'
 Plug 'thoughtbot/vim-rspec'
 Plug 'jgdavey/tslime.vim'
+Plug 'tpope/vim-bundler'
 
 "pattern search in source files
 Plug 'mileszs/ack.vim'
