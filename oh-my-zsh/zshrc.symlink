@@ -63,7 +63,7 @@ plugins=(
   fzf
   git
   npm
-  osx
+  macos
   rbenv
   vi-mode
   yarn
