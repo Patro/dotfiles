@@ -66,16 +66,16 @@ bind-key -n -N 'select lower pane' C-j if-shell "$send_raw_keys" 'send-keys C-j'
 bind-key -n -N 'select upper pane' C-k if-shell "$send_raw_keys" 'send-keys C-k'  'select-pane -U'
 bind-key -n -N 'select right pane' C-l if-shell "$send_raw_keys" 'send-keys C-l'  'select-pane -R'
 
-bind-key -T copy-mode-vi 'C-h' select-pane -L
-bind-key -T copy-mode-vi 'C-j' select-pane -D
-bind-key -T copy-mode-vi 'C-k' select-pane -U
-bind-key -T copy-mode-vi 'C-l' select-pane -R
+bind-key -T copy-mode-vi C-h select-pane -L
+bind-key -T copy-mode-vi C-j select-pane -D
+bind-key -T copy-mode-vi C-k select-pane -U
+bind-key -T copy-mode-vi C-l select-pane -R
 
 # Easy rotating of panes
-bind C-k swap-pane -U
+bind-key C-k swap-pane -U
 
 # Reload tmux.conf with prefix-r
-bind C-r source-file ~/.tmux.conf \; display "Reloaded ~/.tmux.conf"
+bind-key C-r source-file ~/.tmux.conf \; display "Reloaded ~/.tmux.conf"
 
 #### COLOUR
 
