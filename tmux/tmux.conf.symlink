@@ -71,6 +71,16 @@ bind-key -T copy-mode-vi C-j select-pane -D
 bind-key -T copy-mode-vi C-k select-pane -U
 bind-key -T copy-mode-vi C-l select-pane -R
 
+# Act like vim in copy mode
+bind-key Escape copy-mode
+bind-key -T copy-mode-vi v send -X begin-selection
+bind-key -T copy-mode-vi y send -X copy-selection
+
+# Allow pasting with C-b p
+unbind-key p
+unbind-key n
+bind-key p paste-buffer
+
 # Easy rotating of panes
 bind-key C-k swap-pane -U
 
