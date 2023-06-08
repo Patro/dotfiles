@@ -10,3 +10,4 @@ Gemfile.local.lock
 db/*.sqlite3
 log/*.log
 tmp/**/*
+docker-compose.override.yml
